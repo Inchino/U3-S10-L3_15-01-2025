@@ -6,30 +6,38 @@ const NetflixNavbar = function () {
   return (
     <Navbar expand="lg" data-bs-theme="dark">
       <Container fluid>
-        <Navbar.Brand href="#home">
+        <Link to="/" className="navbar-brand">
           <Image src="assets/logo.png" width={100} height={55} />
-        </Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto mb-2 mb-lg-0">
-            <Nav.Link href="#home" className="fw-bold active">
+            <Link to="/" className={
+            location.pathname === '/home' ? 'nav-link active fw-bold' : 'nav-link fw-bold'
+            }>
               Home
-            </Nav.Link>
+            </Link>
             <Link to="/tvshows" className={
-            location.pathname === '/menu' ? 'nav-link active fw-bold' : 'nav-link fw-bold'
+            location.pathname === '/tvshows' ? 'nav-link active fw-bold' : 'nav-link fw-bold'
             }
             >
               TV Shows
             </Link>
-            <Nav.Link href="#" className="fw-bold">
+            <Link to="/movies" className={
+            location.pathname === '/movies' ? 'nav-link active fw-bold' : 'nav-link fw-bold'
+            }>
               Movies
-            </Nav.Link>
-            <Nav.Link href="#" className="fw-bold">
+            </Link>
+            <Link to="recentlyadded" className={
+            location.pathname === '/menu' ? 'nav-link active fw-bold' : 'nav-link fw-bold'
+            }>
               Recently Added
-            </Nav.Link>
-            <Nav.Link href="#" className="fw-bold">
+            </Link>
+            <Link to="mylist" className={
+            location.pathname === '/menu' ? 'nav-link active fw-bold' : 'nav-link fw-bold'
+            }>
               My List
-            </Nav.Link>
+            </Link>
           </Nav>
           <Container className="d-flex align-items-center m-0 p-0 my-2 d-lg-none">
             <Nav className="bi bi-search icons"></Nav>
@@ -40,20 +48,20 @@ const NetflixNavbar = function () {
             <Nav className="bi bi-person-circle icons"></Nav>
           </Container>
         </Navbar.Collapse>
-        <Nav.Link href="#">
+        <Link to="#">
           <i className="bi bi-search icons d-lg-block d-none"></i>
-        </Nav.Link>
-        <Nav.Link href="#">
+        </Link>
+        <Link to="#">
           <Nav id="kids" className="fw-bold d-lg-block d-none">
             KIDS
           </Nav>
-        </Nav.Link>
-        <Nav.Link href="#">
+        </Link>
+        <Link to="#">
           <i className="bi bi-bell icons d-lg-block d-none"></i>
-        </Nav.Link>
-        <Nav.Link href="#">
+        </Link>
+        <Link to="#">
           <i className="bi bi-person-circle icons d-lg-block d-none"></i>
-        </Nav.Link>
+        </Link>
       </Container>
     </Navbar>
   );
