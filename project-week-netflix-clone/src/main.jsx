@@ -7,6 +7,7 @@ import NetflixFooter from "./components/NetflixFooter";
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import TvShows from "./components/TvShows";
 import HomePage from "./components/HomePage";
+import MovieDetails from "./components/MovieDetails"
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -14,6 +15,7 @@ createRoot(document.getElementById("root")).render(
     <Routes>
     <Route path="/" element={<HomePage />} />
     <Route path="/tvshows" element={<TvShows />} />
+    <Route path="/moviedetails/:movieId" element={<MovieDetails />} />
     </Routes>
     <NetflixFooter />
   </BrowserRouter>
