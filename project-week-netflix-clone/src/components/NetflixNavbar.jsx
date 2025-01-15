@@ -1,6 +1,8 @@
 import { Container, Navbar, Nav, Image } from "react-bootstrap";
+import { Link, useLocation } from 'react-router-dom';
 
 const NetflixNavbar = function () {
+  const location = useLocation()
   return (
     <Navbar expand="lg" data-bs-theme="dark">
       <Container fluid>
@@ -13,9 +15,12 @@ const NetflixNavbar = function () {
             <Nav.Link href="#home" className="fw-bold active">
               Home
             </Nav.Link>
-            <Nav.Link href="#" className="fw-bold">
+            <Link to="/tvshows" className={
+            location.pathname === '/menu' ? 'nav-link active fw-bold' : 'nav-link fw-bold'
+            }
+            >
               TV Shows
-            </Nav.Link>
+            </Link>
             <Nav.Link href="#" className="fw-bold">
               Movies
             </Nav.Link>
