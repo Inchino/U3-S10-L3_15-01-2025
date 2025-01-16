@@ -15,7 +15,7 @@ createRoot(document.getElementById("root")).render(
     <Routes>
     <Route path="/" element={<HomePage />} />
     <Route path="/tvshows" element={<TvShows />} />
-    <Route path="/moviedetails/:movieId" element={<MovieDetails />} />
+    <Route path="/moviedetails/:movieID" element={<MovieDetails />} />
     </Routes>
     <NetflixFooter />
   </BrowserRouter>
